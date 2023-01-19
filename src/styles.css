@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+button {
+    margin: 5px;
+}
+
+.hangman-img{
+    height: 350px;
+}

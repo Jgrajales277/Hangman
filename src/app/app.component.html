@@ -1,0 +1,48 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col text-center">
+      <h1>HANGMAN</h1>
+      <!-- <h1>Aquí va el muñequito</h1> -->
+      <img src="assets/img/{{attempts}}.png" alt="" class="hangman-img">
+      <h3>Intentos:</h3> <small>{{attempts}} / 9</small>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col text-center">
+      <h1>{{hiddenWord}}</h1>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="won">
+    <div class="col text-center">
+      <h1> You Won!</h1>
+      <br>
+      <img src="assets/img/applause-gif-19.gif">
+    </div>
+
+  </div>
+  <div class="row" *ngIf="lost">
+    <div class="col text-center">
+      <h1> You lost!</h1>
+      <h3>{{word}}</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-dark" (click)="checkLetter(letter.value)"
+       *ngFor="let letter of letters" [disabled]="letter.state">{{letter.value}}</button>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col text-center">
+      <button class="btn btn-danger" style="margin-left: 30px;" (click)="newGame()">New Game</button>
+
+
+    </div>
+  </div>
+
+</div>
